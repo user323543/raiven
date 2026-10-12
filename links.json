@@ -1,0 +1,19 @@
+{
+  "links": [
+    {
+      "label": "YouTube",
+      "url": "https://youtube.com/@DEIN_KANAL_HIER",
+      "icon": "youtube"
+    },
+    {
+      "label": "TikTok",
+      "url": "https://tiktok.com/@DEIN_PROFIL_HIER",
+      "icon": "tiktok"
+    },
+    {
+      "label": "Discord Community Server",
+      "url": "https://discord.gg/DEIN_SERVER_HIER",
+      "icon": "discord"
+    }
+  ]
+}

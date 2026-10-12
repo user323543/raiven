@@ -96,6 +96,15 @@
     color: var(--accent);
     letter-spacing: -1px;
     text-shadow: 0 0 20px var(--accent);
+    overflow: hidden;
+  }
+
+  .avatar-inner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    display: block;
   }
 
   @keyframes pulse-ring {
@@ -308,6 +317,17 @@
     try {
       const res = await fetch('links.json');
       const data = await res.json();
+
+      // Avatar: Bild aus links.json laden, sonst "R" anzeigen
+      if (data.avatar) {
+        const inner = document.querySelector('.avatar-inner');
+        const img = document.createElement('img');
+        img.src = data.avatar;
+        img.alt = 'Raiven';
+        img.onerror = () => { img.remove(); inner.textContent = 'R'; };
+        inner.textContent = '';
+        inner.appendChild(img);
+      }
       data.links.forEach(item => {
         const a = document.createElement('a');
         a.className = 'link-btn';
